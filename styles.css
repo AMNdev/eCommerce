@@ -1,0 +1,414 @@
+/* Tipografías */
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+/* Variables  */
+:root {
+  --color1: #fafbfb;
+  --color2: #b2aa98;
+  --color3: #f1bf59;
+  --color4: #dc501b;
+  --color5: #282633;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display";
+  font-family: "Lato";
+  font-family: "Montserrat";
+}
+
+/* Zona superior --- Header y Menú */
+
+header {
+  /* background: var(--color3); */
+  /* background: linear-gradient(to bottom right, #b2aa98, #f1bf59, #dc501b, #282633); */
+  /* background: linear-gradient(to right, #fafbfb, #b2aa98, #f1bf59, #dc501b, #282633); */
+  background: radial-gradient(
+    circle,
+    #fafbfb,
+    #b2aa98,
+    #f1bf59,
+    #dc501b,
+    #282633
+  );
+
+  height: 8vw;
+  max-height: 100px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+header h1 {
+  flex: 5;
+  text-align: center;
+  color: var(--color5);
+}
+
+.login {
+  flex: 1;
+  width: 5%;
+  max-width: 200px;
+  height: 40%;
+  margin-right: 1rem;
+  border-radius: 15px;
+}
+
+.login a {
+  margin-left: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+.login img {
+  height: 100%;
+  object-fit: cover;
+  background: transparent;
+  border-radius: 10%;
+}
+
+.login a p {
+  text-align: left;
+  margin-left: 0.5rem;
+  color: var(--color5);
+  align-self: center;
+}
+
+.login:hover {
+  opacity: 0.9;
+  background: linear-gradient(
+    to bottom right,
+    #b2aa9867,
+    #f1bf59,
+    #dc501b,
+    #282633
+  );
+}
+.login:hover img {
+  scale: 1.1;
+}
+.idioma {
+  flex: 1;
+  width: 10%;
+  height: 50%;
+  border: 2px solid black;
+  margin-right: 2%;
+}
+
+.menu {
+  background: var(--color2);
+  width: 100%;
+  height: 5vw;
+  max-height: 70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu .categorias {
+  height: 100%;
+  text-align: center;
+  flex: 8;
+  margin-right: 2px;
+  transition: flex 0.5s ease;
+
+}
+
+.menu .categorias ul {
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.menu .categorias li {
+
+  height: 100%;
+  width: 25%;
+  display: flex;
+}
+
+.menu .categorias li a {
+  width: 100%;
+  color: var(--color4);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.menu .categorias li a:hover {
+  background-color: var(--color5);
+  color: var(--color1);
+  border-radius: 5px;
+}
+
+.buscar {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  display: flex;
+  transition: flex 0.5s ease;
+
+}
+
+.buscar .input {
+  border: 0;
+  font-size: 1rem;
+  padding: 1rem;
+  height: 80%;
+  width: 50px;
+  align-self: center;
+  border-radius: 5px;
+  transform: 0.3s ease;
+  transition: width 0.3s ease;
+  background-color: var(--color5);
+  color: var(--color1);
+}
+.buscar .input:focus {
+  outline: none;
+}
+
+.buscar .input::placeholder {
+  border: 0;
+  color: var(--color2);
+  /* font-size: 1.1rem; */
+  font-style: italic;
+}
+
+.btn-buscar {
+  background-color: var(--color2);
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: 0.3s ease;
+}
+
+.btn-buscar img {
+  padding: 0.8rem;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.buscar.active .input {
+  width: 80%;
+}
+
+.menu.buscarActive .categorias {
+  flex: 6;
+}
+.menu.buscarActive .buscar {
+  flex: 3;
+}
+.menu.buscarActive .btn-buscar {
+  /* background-color: var(--color2); */
+  /* border: 0; */
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  right: 0;
+  /* height: 100%; */
+  width: 10%;
+  transform: 0.3s ease;
+}
+
+.carrito {
+  flex: 1;
+  border: 1px solid blue;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* Zona media --- Aside, Main, Bread */
+
+/* todo ojo a esta forma de disponer el grid */
+/* .wrapper {
+  display: grid;
+  grid-template-columns: 250px minmax(10px, 1fr);
+  grid-gap: 1rem;
+} */
+
+.grid-area {
+  background: var(--color1);
+  display: grid;
+  min-height: 70vh;
+  grid-gap: 1vw;
+  /* grid-template-rows: 1fr 9fr; */
+  grid-template-columns: 2fr 8fr;
+  grid-template-areas:
+    "aside bread bread bread bread"
+    "aside main main main main";
+}
+
+.breadcrumbs {
+  grid-area: bread;
+  border: 2px solid black;
+  height: 20px;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main .items {
+  overflow: hidden;
+  margin: 10px;
+  width: 200px;
+  height: 300px;
+  background-color: var(--color1);
+  border: 2.5px solid black;
+  border-radius: 12px;
+}
+
+.main .items .name {
+  text-align: center;
+  background-color: var(--color4);
+  height: 25px;
+  padding-top: 4px;
+  color: var(--color1);
+  margin: 0;
+}
+
+.main .items .price {
+  float: left;
+  padding-left: 10px;
+  display: block;
+  width: 100%;
+  color: var(--color3);
+  font-weight: 650;
+}
+
+.main .items .info {
+  padding-left: 10px;
+  color: var(--color5);
+}
+
+.main .items .img {
+  overflow: hidden;
+  margin: 0;
+}
+
+.main .items .img img {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+  transition-duration: 0.8s;
+}
+
+/* efecto aumento de la imagen */
+/* .main .items:hover .img img {
+  transform: scale(1.2);
+  transition-duration: 0.8s;
+  border-radius: 12px;
+} */
+
+/* Zona Lateral - Aside */
+
+aside {
+  min-width: 100px;
+  /* max-width: 10vw; */
+  grid-area: aside;
+  /* border: 2px solid black; */
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.lateral {
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+.lateral .item-lateral {
+  margin: 5% auto;
+  width: 95%;
+  max-height: 300px;
+  background-color: var(--color4);
+  border: 2.5px solid black;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.lateral .item-lateral .img-lateral {
+  overflow: hidden;
+}
+.lateral .item-lateral img {
+  width: 100%;
+  scale: 1.3;
+}
+
+.lateral .item-lateral .name {
+  float: left;
+  margin: 5px;
+  color: var(--color1);
+}
+.lateral .item-lateral .price {
+  margin: 5px;
+  float: right;
+  color: var(--color3);
+}
+
+/* Zona inferior --- Footer */
+
+footer {
+  padding: 1rem;
+  background-color: var(--color3);
+  /* border: 2px solid black; */
+  /* height: 15vh; */
+  /* min-height: 90px; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-items: center;
+}
+footer h3 {
+  /* text-align: center; */
+  color: var(--color5);
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+footer ul {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+footer ul li a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--color5);
+}
+footer ul li:hover .icono {
+  scale: 1.2;
+  font-size: 2.2rem;
+}
