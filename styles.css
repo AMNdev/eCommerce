@@ -9,6 +9,22 @@
   --color3: #f1bf59;
   --color4: #dc501b;
   --color5: #282633;
+
+  --colorFondo1: var(--color1);
+  --colorFondo2: var(--color4);
+  --colorFondo3: var(--color2);
+  --colorFondo4: var(--color5);
+
+  --colorFondoFooter: var(--color3);
+
+  --colorLetraBuscar: var(--color1);
+  --colorFondoBuscar: var(--color5);
+
+  --colorLetra1: var(--color5);
+  --colorLetra2: var(--color4);
+  --colorLetra3: var(--color1);
+  --colorLetra4: var(--color2);
+
 }
 
 * {
@@ -23,6 +39,22 @@
   --color3: #721C02;
   --color4: #A1832D;
   --color5: #fafbfb;
+
+  --colorFondo1: var(--color1);
+  --colorFondo2: var(--color4);
+  --colorFondo3: var(--color2);
+  --colorFondo4: var(--color3);
+
+  --colorFondoFooter: var(--color2);
+
+  --colorLetraBuscar: var(--color3);
+  --colorFondoBuscar: var(--color4);
+
+
+  --colorLetra1: var(--color5);
+  --colorLetra2: var(--color4);
+  --colorLetra3: var(--color1);
+  --colorLetra4: var(--color2);
 }
 
 body {
@@ -56,7 +88,7 @@ header {
 header h1 {
   flex: 5;
   text-align: center;
-  color: var(--color5);
+  color: var(--colorLetra1);
 }
 
 .login {
@@ -82,7 +114,7 @@ header h1 {
 .login a p {
   text-align: left;
   margin-left: 0.5rem;
-  color: var(--color5);
+  color: var(--colorLetra1);
   align-self: center;
 }
 .login:hover {
@@ -118,7 +150,7 @@ header h1 {
 
 /* ---------- Barra de menu ----------- */
 .menu {
-  background: var(--color2);
+  background: var(--colorFondo3);
   width: 100%;
   height: 5vw;
   max-height: 70px;
@@ -151,7 +183,7 @@ header h1 {
 }
 .menu .categorias li a {
   width: 100%;
-  color: var(--color4);
+  color: var(--colorLetra2);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -159,8 +191,8 @@ header h1 {
   font-size: 1.1rem;
 }
 .menu .categorias li a:hover {
-  background-color: var(--color5);
-  color: var(--color1);
+  background-color: var(--colorFondo4);
+  color: var(--colorLetra2);
   border-radius: 5px;
 }
 
@@ -181,20 +213,20 @@ header h1 {
   border-radius: 5px;
   transform: 0.3s ease;
   transition: width 0.3s ease;
-  background-color: var(--color5);
-  color: var(--color1);
+  background-color: var(--colorFondoBuscar);
+  color: var(--colorLetraBuscar);
 }
 .buscar .input:focus {
   outline: none;
 }
 .buscar .input::placeholder {
   border: 0;
-  color: var(--color2);
+  color: var(--colorLetra4);
   /* font-size: 1.1rem; */
   font-style: italic;
 }
 .btn-buscar {
-  background-color: var(--color2);
+  background-color: var(--colorFondo3);
   border: 0;
   cursor: pointer;
   position: absolute;
@@ -259,7 +291,7 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--colorLetra3);
   padding: 2px;
   font-size: 0.7rem;
 }
@@ -278,7 +310,7 @@ header h1 {
 } */
 
 .grid-area {
-  background: var(--color1);
+  background: var(--colorFondo1);
   display: grid;
   min-height: 70vh;
   grid-gap: 1vw;
@@ -299,16 +331,16 @@ header h1 {
   margin: 10px;
   width: 200px;
   height: 300px;
-  background-color: var(--color1);
+  background-color: var(--colorFondo1);
   border: 2.5px solid black;
   border-radius: 12px;
 }
 .main .items .name {
   text-align: center;
-  background-color: var(--color4);
+  background-color: var(--colorFondo2);
   height: 25px;
   padding-top: 4px;
-  color: var(--color1);
+  color: var(--colorLetra3);
   margin: 0;
 }
 .main .items .price {
@@ -316,12 +348,12 @@ header h1 {
   padding-left: 10px;
   display: block;
   width: 100%;
-  color: var(--color3);
+  color: var(--colorLetra2);
   font-weight: 650;
 }
 .main .items .info {
   padding-left: 10px;
-  color: var(--color5);
+  color: var(--colorLetra1);
 }
 .main .items .img {
   overflow: hidden;
@@ -365,7 +397,7 @@ aside {
   margin: 5% auto;
   width: 95%;
   max-height: 300px;
-  background-color: var(--color4);
+  background-color: var(--colorFondo2);
   border: 2.5px solid black;
   border-radius: 12px;
   overflow: hidden;
@@ -380,12 +412,12 @@ aside {
 .lateral .item-lateral .name {
   float: left;
   margin: 5px;
-  color: var(--color1);
+  color: var(--colorLetra3);
 }
 .lateral .item-lateral .price {
   margin: 5px;
   float: right;
-  color: var(--color3);
+  color: var(--colorLetra4);
 }
 
 
@@ -393,7 +425,7 @@ aside {
 
 footer {
   padding: 1rem;
-  background-color: var(--color3);
+  background-color: var(--colorFondoFooter);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -402,9 +434,13 @@ footer {
 }
 footer h3 {
   /* text-align: center; */
-  color: var(--color5);
+  color: var(--colorLetra1);
   font-size: 1.5rem;
   margin: 1rem;
+}
+
+footer p {
+  color: var(--colorLetra1);
 }
 footer ul {
   margin-top: 1rem;
@@ -417,7 +453,7 @@ footer ul {
 footer ul li a {
   font-size: 1.8rem;
   text-decoration: none;
-  color: var(--color5);
+  color: var(--colorLetra1);
 }
 footer ul li:hover .icono {
   scale: 1.2;
