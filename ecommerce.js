@@ -7,7 +7,12 @@ const badge = document.querySelector('.badge');
 const iconosDarkMode = document.querySelector('.iconosDarkMode');
 const body = document.querySelector('body');
 const botonesDarkMode = document.querySelectorAll('.iconoDark')
+const botonDesplegar = document.querySelector('.desplegarBoton');
+const menuDesplegar = document.querySelector('.menuDesplegado');
 
+botonDesplegar.addEventListener('click', () => {
+    menuDesplegar.classList.toggle('oculto')
+})
 
 
 
