@@ -409,15 +409,12 @@ Zona media --- Aside, Main, Bread
 
 /* Zona Lateral - Aside */
 
-aside {
+.lateral {
   min-width: 100px;
   grid-area: aside;
-  min-height: 70vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
-}
-
-.lateral {
   width: 100%;
   position: sticky;
   top: 0;
@@ -570,7 +567,7 @@ footer ul li:hover .icono {
 /** --------------------------- **/
 /** --------------------------- **/
 
-/*********---- Responsive ------ **********/
+/*********---- Media Queries ------ **********/
 
 @media (max-width: 700px) {
   .menu {
@@ -629,7 +626,6 @@ footer ul li:hover .icono {
   }
 
   .menuDesplegable {
-
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -756,6 +752,50 @@ footer ul li:hover .icono {
     font-size: 0.5rem;
   }
   .btn-carritoDesplegable .badgeDesplegable.oculto {
+    display: none;
+  }
+}
+
+@media (max-width: 376px) {
+  .grid-area {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+  .main {
+    /* grid-area: main; */
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .lateral {
+    position: sticky;
+    top: 0;
+    margin: 0 auto;
+    height: 17vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .lateral .item-lateral {
+    flex: 0 0 auto;
+    width: 40%;
+    margin: 2% 5%;
+    height: 15vh;
+  }
+
+  .lateral .item-lateral .img-lateral {
+    height: 70%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+
+  .lateral .item-lateral .price {
     display: none;
   }
 }
