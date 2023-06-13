@@ -1,0 +1,64 @@
+.main {
+  grid-area: main;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.main .items {
+  overflow: hidden;
+  margin: 10px;
+  width: 200px;
+  height: 300px;
+  background-color: var(--colorFondo1);
+  border: 2.5px solid black;
+  border-radius: 12px;
+}
+.main .items .name {
+  text-align: center;
+  background-color: var(--colorFondo2);
+  height: 25px;
+  padding-top: 4px;
+  color: var(--colorLetra3);
+  margin: 0;
+}
+.main .items .price {
+  float: left;
+  padding-left: 10px;
+  display: block;
+  width: 100%;
+  color: var(--colorLetra2);
+  font-weight: 650;
+}
+.main .items .info {
+  padding-left: 10px;
+  color: var(--colorLetra1);
+}
+.main .items .img {
+  overflow: hidden;
+  margin: 0;
+}
+.main .items .img img {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+  transition-duration: 0.8s;
+}
+
+/* efecto aumento de la imagen */
+/* .main .items:hover .img img {
+    transform: scale(1.2);
+    transition-duration: 0.8s;
+    border-radius: 12px;
+  } */
+
+@media (max-width: 376px) {
+  .main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

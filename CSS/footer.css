@@ -1,0 +1,38 @@
+/** Zona inferior --- Footer **/
+
+footer {
+  padding: 1rem;
+  background-color: var(--colorFondoFooter);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-items: center;
+}
+footer h3 {
+  /* text-align: center; */
+  color: var(--colorLetra1);
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+footer p {
+  color: var(--colorLetra1);
+}
+footer ul {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+footer ul li a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: var(--colorLetra1);
+}
+footer ul li:hover .icono {
+  scale: 1.2;
+  font-size: 2.2rem;
+}

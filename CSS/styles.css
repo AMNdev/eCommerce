@@ -1,0 +1,149 @@
+/** Tipografías **/
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+
+/** Variables  **/
+:root {
+  --color1: #fafbfb;
+  --color2: #b2aa98;
+  --color3: #f1bf59;
+  --color4: #dc501b;
+  --color5: #282633;
+
+  --colorFondo1: var(--color1);
+  --colorFondo2: var(--color4);
+  --colorFondo3: var(--color2);
+  --colorFondo4: var(--color5);
+
+  --colorFondoBtnArriba: var(--color2);
+  --colorFondoFooter: var(--color3);
+
+  --colorLetraBuscar: var(--color1);
+  --colorFondoBuscar: var(--color5);
+
+  --colorLetra1: var(--color5);
+  --colorLetra2: var(--color4);
+  --colorLetra3: var(--color1);
+  --colorLetra4: var(--color2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dark-mode {
+  --color1: #1c1b22;
+  --color2: #2e2e2e;
+  --color3: #721c02;
+  --color4: #a1832d;
+  --color5: #fafbfb;
+
+  --colorFondo1: var(--color1);
+  --colorFondo2: var(--color4);
+  --colorFondo3: var(--color2);
+  --colorFondo4: var(--color3);
+
+  --colorFondoBtnArriba: var(--color4);
+  --colorFondoFooter: var(--color2);
+
+  --colorLetraBuscar: var(--color3);
+  --colorFondoBuscar: var(--color4);
+
+  --colorLetra1: var(--color5);
+  --colorLetra2: var(--color4);
+  --colorLetra3: var(--color1);
+  --colorLetra4: var(--color2);
+}
+
+body {
+  font-family: "Playfair Display";
+}
+
+.grid-area {
+  background: var(--colorFondo1);
+  display: grid;
+  min-height: 70vh;
+  grid-gap: 1vw;
+  grid-template-columns: 2fr 8fr;
+  grid-template-areas: "aside main main main main";
+}
+
+/**  BTN IR ARRIBA  **/
+.button-arriba {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-arriba .btnArriba {
+  width: 0%;
+  height: 0%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  background-color: var(--colorFondoBtnArriba);
+  opacity: 0;
+  transform: scale(0);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.button-arriba .btnArriba img {
+  width: 90%;
+}
+
+.shows {
+  animation: popup 0.5s ease-in-out;
+  transform: scale(1) !important;
+  opacity: 0.3 !important;
+  width: 100% !important;
+  height: 100% !important;
+  transition: all 0.5s ease;
+}
+
+@keyframes popup {
+  0% {
+    width: 0% !important;
+    height: 0% !important;
+    opacity: 0 !important;
+  }
+
+  50% {
+    width: 50% !important;
+    height: 50% !important;
+    opacity: 0.2 !important;
+  }
+
+  100% {
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0.7 !important;
+  }
+}
+
+/*********---- Media Queries ------ **********/
+
+@media (max-width: 376px) {
+  .grid-area {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+  .main {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
