@@ -10,13 +10,13 @@ footer {
   justify-items: center;
 }
 footer h3 {
-  /* text-align: center; */
   color: var(--colorLetra1);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 1rem;
 }
 
 footer p {
+  font-size: 1.1rem;
   color: var(--colorLetra1);
 }
 footer ul {
@@ -33,6 +33,5 @@ footer ul li a {
   color: var(--colorLetra1);
 }
 footer ul li:hover .icono {
-  scale: 1.2;
-  font-size: 2.2rem;
+  scale: 1.4;
 }

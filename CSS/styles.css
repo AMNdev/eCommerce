@@ -99,8 +99,8 @@ body {
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.button-arriba .btnArriba img {
-  width: 90%;
+.button-arriba .btnArriba ion-icon {
+  font-size: 2rem;
 }
 
 .shows {

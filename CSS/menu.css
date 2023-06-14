@@ -1,4 +1,6 @@
-/** ---------- Barra de menu ----------- **/
+/* **************************** ****** *************************** */
+/* **************************** Menu   *************************** */
+/* **************************** ****** *************************** */
 
 .menu {
   background: var(--colorFondo3);
@@ -14,7 +16,7 @@
 .menu .categorias {
   height: 100%;
   text-align: center;
-  flex: 8;
+  flex: 12;
   margin-right: 2px;
   transition: flex 0.5s ease;
 }
@@ -46,6 +48,9 @@
   color: var(--colorLetra2);
   border-radius: 5px;
 }
+/* **************************** ****** *************************** */
+/* **************************** Buscar *************************** */
+/* **************************** ****** *************************** */
 
 .buscar {
   flex: 1;
@@ -53,6 +58,10 @@
   height: 100%;
   display: flex;
   transition: flex 0.5s ease;
+}
+
+.buscar:hover ion-icon {
+  rotate: -15deg;
 }
 .buscar .input {
   border: none;
@@ -73,7 +82,6 @@
 .buscar .input::placeholder {
   border: 0;
   color: var(--colorLetra4);
-  /* font-size: 1.1rem; */
   font-style: italic;
 }
 .btn-buscar {
@@ -86,23 +94,23 @@
   height: 100%;
   width: 100%;
   transform: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.btn-buscar img {
-  padding: 0.8rem;
-  margin: 0.1rem;
-  height: 90%;
-  min-height: 40px;
-  object-fit: cover;
-  border: none;
+.btn-buscar ion-icon {
+  color: var(--colorLetra1);
+  height: 70%;
+  width: 70%;
 }
 .buscar.active .input {
-  width: 80%;
+  width: 90%;
 }
 .menu.buscarActive .categorias {
   flex: 6;
 }
 .menu.buscarActive .buscar {
-  flex: 3;
+  flex: 6;
 }
 .menu.buscarActive .btn-buscar {
   cursor: pointer;
@@ -113,6 +121,10 @@
   transform: 0.3s ease;
 }
 
+/* **************************** ****** *************************** */
+/* **************************** CARRITO ************************** */
+/* **************************** ****** *************************** */
+
 .carrito {
   flex: 1;
   height: 100%;
@@ -120,21 +132,32 @@
   align-items: center;
   justify-content: center;
 }
+
 .btn-carrito {
+  height: 100%;
+  width: 100%;
   background-color: transparent;
   cursor: pointer;
-  width: 80%;
-  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
-.btn-carrito img {
-  height: 100%;
-  object-fit: cover;
+
+.btn-carrito ion-icon {
+  color: var(--colorLetra1);
+  height: 70%;
+  width: 70%;
 }
+
+.btn-carrito:hover ion-icon {
+  rotate: 10deg;
+}
+
 .btn-carrito .badge {
   position: absolute;
   top: 0;
-  left: 30%;
+  left: 60%;
   background: red;
   width: 1.5rem;
   height: 1.5rem;
@@ -144,7 +167,7 @@
   align-items: center;
   color: var(--colorLetra3);
   padding: 2px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 .btn-carrito .badge.oculto {
   display: none;
@@ -153,6 +176,10 @@
 .menuDesplegable {
   display: none;
 }
+
+/* **************************** ****** *************************** */
+/* **************************** QUERIES *************************** */
+/* **************************** ****** *************************** */
 
 @media (max-width: 700px) {
   .menu {
@@ -194,14 +221,12 @@
     width: 100%;
     height: 3vh;
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     overflow: hidden;
   }
-  .desplegarBoton img {
-    height: 50%;
-    transform: translate(0%, 50%);
-    object-fit: contain;
+  .desplegarBoton ion-icon {
+    font-size: 2rem;
   }
 
   .categoriasDesplegable {
