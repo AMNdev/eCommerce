@@ -9,6 +9,8 @@ const body = document.querySelector('body');
 const botonesDarkMode = document.querySelectorAll('.iconoDark')
 const botonDesplegar = document.querySelector('.desplegarBoton');
 const menuDesplegar = document.querySelector('.menuDesplegado');
+const botonCarritoDesplegable = document.querySelector('.btn-carritoDesplegable');
+const badgeDesplegable = document.querySelector('.badgeDesplegable');
 
 botonDesplegar.addEventListener('click', () => {
     menuDesplegar.classList.toggle('oculto')
@@ -34,10 +36,15 @@ botonBuscar.addEventListener('click', () => {
 
 })
 
-// función solo para desarrollo
+// funciones solo para desarrollo
 carrito.addEventListener('click', () => {
     badge.innerHTML = Math.ceil(Math.random() * 10);
     badge.classList.toggle('oculto');
+
+})
+botonCarritoDesplegable.addEventListener('click', () => {
+    badgeDesplegable.innerHTML = Math.ceil(Math.random() * 10);
+    badgeDesplegable.classList.toggle('oculto');
 
 })
 
