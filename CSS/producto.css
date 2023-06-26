@@ -1,0 +1,48 @@
+.producto-card {
+    margin: auto auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.producto-img, .producto-info{
+    flex: 1;
+}
+
+.producto-imagen {
+    width: 90%;
+    height: 90%;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 24px -6px var(--color4);
+}
+
+.producto-info #nombre {
+    font-size: 3rem;
+
+}
+.producto-info #categoria {
+    text-align: left;
+}
+.producto-info #precio {
+    text-align: right;
+    font-size: 1.5rem;
+}
+.producto-info #descripcion{
+    padding: 1rem;
+}
+.producto-info #rating {
+    text-align: center;
+    padding: 1rem;
+}
+
+/* nombre categoria descripcion precio rating */
+
+@media (max-width: 750px) {
+    .producto-card{
+        flex-direction: column;
+    }
+}

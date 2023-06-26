@@ -21,7 +21,11 @@ header {
 
 header h1 {
   width: 100%;
-  text-align: center;
+  text-align: left;
+  margin-left: 5rem;
+}
+header h1 a {
+  text-decoration: none;
   color: var(--colorLetra1);
 }
 
@@ -86,6 +90,9 @@ header h1 {
 @media (max-width: 630px) {
   header {
     height: 8vh;
+  }
+  header h1 {
+    margin-left: 2rem;
   }
 
   .login {
