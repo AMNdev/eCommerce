@@ -1,0 +1,29 @@
+.form {
+  padding: 4rem 0;
+}
+
+.form form {
+  /* width: 50%; */
+  min-width: 200px;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  margin: 0 1rem;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--colorLetra1);
+}
+.form input {
+  padding: 0.5rem;
+  margin: 0 1rem;
+  font-family: inherit;
+  font-size: 1.1rem;
+}
+.form button {
+  margin: 2rem;
+  padding: 0.5rem;
+  font-family: inherit;
+}

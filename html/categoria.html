@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/header.css" />
+    <link rel="stylesheet" href="../CSS/menu.css" />
+    <link rel="stylesheet" href="../CSS/aside.css" />
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="stylesheet" href="../CSS/footer.css" />
+    <title>App eCommerce</title>
+  </head>
+
+  <body>
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+    <!--           ************   SECCIÓN  **************         -->
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+
+    <header>
+      <h1><a href="../index.html"> Trendy Gear </a></h1>
+
+      <div class="login">
+        <a href="#">
+          <ion-icon name="log-in-outline"></ion-icon>
+          <p>log in</p>
+        </a>
+      </div>
+
+      <div class="iconosDarkMode">
+        <div class="iconoDark">
+          <ion-icon name="moon"></ion-icon>
+        </div>
+        <div class="iconoDark oculto">
+          <ion-icon name="sunny"></ion-icon>
+        </div>
+      </div>
+    </header>
+
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+    <!--           ************   SECCIÓN  **************         -->
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+
+    <div class="menu">
+      <div class="categorias">
+        <ul>
+          <li><a href="./categoria.html">men's clothing</a></li>
+          <li><a href="#">women's clothing</a></li>
+          <li><a href="#">jewellery</a></li>
+          <li><a href="#">electronics</a></li>
+        </ul>
+      </div>
+      <div class="buscar">
+        <input
+          type="text"
+          class="input"
+          placeholder="Find your next purchase..."
+        />
+        <button class="btn-buscar">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+      <div class="carrito">
+        <a href="#" class="btn-carrito">
+          <ion-icon name="bag-handle-outline"></ion-icon>
+          <span class="badge oculto"></span>
+        </a>
+      </div>
+    </div>
+
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+    <!--           ************   SECCIÓN  **************         -->
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+
+    <div class="menuDesplegable">
+      <div class="desplegarBoton">
+        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+      </div>
+      <div class="menuDesplegado oculto">
+        <div class="categoriasDesplegable">
+          <ul>
+            <li><a href="./categoria.html">men's clothing</a></li>
+            <li><a href="#">women's clothing</a></li>
+            <li><a href="#">jewellery</a></li>
+            <li><a href="#">electronics</a></li>
+          </ul>
+        </div>
+        <div class="buscarDesplegable">
+          <input
+            type="text"
+            class="input"
+            placeholder="Find your next purchase..."
+          />
+        </div>
+        <div class="carritoDesplegable">
+          <a href="#" class="btn-carritoDesplegable">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="badgeDesplegable oculto"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+    <!--           ************   SECCIÓN  **************         -->
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+
+    <div class="grid-area">
+      <aside class="lateral">
+        <!-- item individual lateral -->
+        <div class="item-lateral">
+          <div class="img-lateral">
+            <img
+              src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt=""
+            />
+          </div>
+          <div class="name">SHOES</div>
+          <div class="price">$5</div>
+        </div>
+
+        <!-- item individual lateral -->
+        <div class="item-lateral">
+          <div class="img-lateral">
+            <img
+              src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt=""
+            />
+          </div>
+          <div class="name">SHOES</div>
+          <div class="price">$5</div>
+        </div>
+
+        <!-- item individual lateral -->
+        <div class="item-lateral">
+          <div class="img-lateral">
+            <img
+              src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt=""
+            />
+          </div>
+          <div class="name">SHOES</div>
+          <div class="price">$5</div>
+        </div>
+
+        <!-- item individual lateral -->
+        <div class="item-lateral">
+          <div class="img-lateral">
+            <img
+              src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt=""
+            />
+          </div>
+          <div class="name">SHOES</div>
+          <div class="price">$5</div>
+        </div>
+      </aside>
+
+      <!--           **************************************         -->
+      <!--           **************************************         -->
+      <!--           ************   SECCIÓN  **************         -->
+      <!--           **************************************         -->
+      <!--           **************************************         -->
+
+      <div class="categorias-contenedor">
+        <h2 id="titulo" >Categoría</h2>
+        <div class="main">
+          <!-- item individual -->
+          <div class="items">
+            <a href="./producto.html">
+              <div class="img img1">
+                <img
+                  src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  alt=""
+                />
+              </div>
+              <div class="name">SHOES</div>
+              <div class="price">$5</div>
+              <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+            </a>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">SHOES</div>
+            <div class="price">$5</div>
+            <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
+          </div>
+
+          <!-- item individual -->
+          <div class="items">
+            <div class="img img1">
+              <img
+                src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt=""
+              />
+            </div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">$56</div>
+            <div class="info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+    <!--           ************   SECCIÓN  **************         -->
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+
+    <!--BOTON IR ARRIBA-->
+    <div class="button-arriba">
+      <a class="btnArriba" id="buttonTop">
+        <ion-icon name="chevron-up-sharp"></ion-icon>
+        <!-- <img src="./assets/arriba.svg" alt="" /> -->
+      </a>
+    </div>
+
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+    <!--           ************   SECCIÓN  **************         -->
+    <!--           **************************************         -->
+    <!--           **************************************         -->
+
+    <footer>
+      <h3>created by AMNdev</h3>
+      <p>
+        Crafted from scratch, this ecommerce site is a testament to my web
+        development expertise. Ready to apply my skills to your team!
+      </p>
+      <ul>
+        <li>
+          <a
+            href="mailto:amarqueznovella@hotmail.com?Subject=Mensaje%20desde%20app%20eCommerce"
+            target="_blank"
+          >
+            <ion-icon class="icono" name="at-sharp"></ion-icon>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/antoniomarqueznovella/"
+            target="_blank"
+          >
+            <ion-icon class="icono" name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/AMNdev" target="_blank">
+            <ion-icon class="icono" name="logo-github"></ion-icon>
+          </a>
+        </li>
+        <li>
+          <a href="https://amndev.github.io/Profile/" target="_blank">
+            <ion-icon class="icono" name="desktop-sharp"></ion-icon>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <script src="../js/ecommerce.js"></script>
+    <script src="../js/categoria.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
