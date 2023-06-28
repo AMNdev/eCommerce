@@ -1,3 +1,11 @@
+.grid-area {
+  background: var(--colorFondo1);
+  display: grid;
+  min-height: 70vh;
+  grid-gap: 1vw;
+  grid-template-columns: 2fr 8fr;
+  grid-template-areas: "aside main main main main";
+}
 .categorias-contenedor{
   text-align: center;
 }

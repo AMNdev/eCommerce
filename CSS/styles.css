@@ -58,16 +58,10 @@
 
 body {
   font-family: "Playfair Display";
+  color: var(--colorLetra1);
+  background: var(--colorFondo1);
 }
 
-.grid-area {
-  background: var(--colorFondo1);
-  display: grid;
-  min-height: 70vh;
-  grid-gap: 1vw;
-  grid-template-columns: 2fr 8fr;
-  grid-template-areas: "aside main main main main";
-}
 
 /**  BTN IR ARRIBA  **/
 .button-arriba {
