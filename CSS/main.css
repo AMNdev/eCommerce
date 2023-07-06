@@ -14,7 +14,7 @@
   text-transform: uppercase;
 }
 
-.main {
+.main, .productos-contenedor {
   grid-area: main;
   display: flex;
   width: 100%;

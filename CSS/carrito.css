@@ -155,3 +155,19 @@
   transform: translate(5px, 5px);
   transition-duration: 0.3s;
 }
+
+@media (max-width: 750px) {
+  .grid-area {
+    flex-direction: column;
+  }
+  .lista{
+    width: 100%;
+  }
+  .resumen {
+    width: 100%;
+    border-left: none;
+  }
+  .resumen-comprar {
+    margin-bottom: 2rem;
+  }
+}

@@ -52,15 +52,8 @@
 
     <div class="menu">
       <div class="categorias">
-        <ul>
-          <li><a href="../html/categoria.html?cat=men">men's clothing</a></li>
-          <li>
-            <a href="../html/categoria.html?cat=women">women's clothing</a>
-          </li>
-          <li><a href="../html/categoria.html?cat=jewellery">jewellery</a></li>
-          <li>
-            <a href="../html/categoria.html?cat=electronics">electronics</a>
-          </li>
+        <ul class="categorias-ul">
+          <!-- <li><a href="../html/categoria.html?cat=men">men's clothing</a></li> -->
         </ul>
       </div>
       <div class="buscar">
@@ -93,18 +86,7 @@
       </div>
       <div class="menuDesplegado oculto">
         <div class="categoriasDesplegable">
-          <ul>
-            <li><a href="../html/categoria.html?cat=men">men's clothing</a></li>
-            <li>
-              <a href="../html/categoria.html?cat=women">women's clothing</a>
-            </li>
-            <li>
-              <a href="../html/categoria.html?cat=jewellery">jewellery</a>
-            </li>
-            <li>
-              <a href="../html/categoria.html?cat=electronics">electronics</a>
-            </li>
-          </ul>
+          <ul class="categorias-ul"></ul>
         </div>
         <div class="buscarDesplegable">
           <input
@@ -185,43 +167,29 @@
       <!--           **************************************         -->
       <!--           **************************************         -->
 
-      <div class="producto-card">
-        <div class="producto-img">
-          <img
-            class="producto-imagen"
-            src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            alt="Imagen del producto"
-          />
-        </div>
-
-        <div class="producto-info">
-          <h2 id="nombre">SHOES</h2>
-          <p id="categoria">Categoría</p>
-          <p id="precio">$5</p>
-          <p id="descripcion">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
-            obcaecati nostrum. Magnam earum eius nihil iusto similique quos
-            molestias unde!
-          </p>
-          <p id="rating">Valoración</p>
-        </div>
-      </div>
-
-      <!-- item individual -->
-      <!-- <div class="items">
-          <a href="#">
-
-            <div class="img img1">
-              <img
+      <div class="contenedor">
+        <!-- <div class="producto-card">
+          <div class="producto-img">
+            <img
+              class="producto-imagen"
               src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              alt=""
+              alt="Imagen del producto"
             />
           </div>
-          <div class="name">SHOES</div>
-          <div class="price">$5</div>
-          <div class="info">Lorem ipsum dolor sit amet consectetur.</div>
-        </a>
+
+          <div class="producto-info">
+            <h2 id="nombre">SHOES</h2>
+            <p id="categoria">Categoría</p>
+            <p id="precio">$5</p>
+            <p id="descripcion">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet,
+              obcaecati nostrum. Magnam earum eius nihil iusto similique quos
+              molestias unde!
+            </p>
+            <p id="rating">Valoración</p>
+          </div>
         </div> -->
+      </div>
     </div>
 
     <!--           **************************************         -->
@@ -281,6 +249,7 @@
     </footer>
 
     <script src="../js/ecommerce.js"></script>
+    <script src="../js/producto.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

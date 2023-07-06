@@ -24,7 +24,7 @@ iconosDarkMode.addEventListener('click', () => {
     botonesDarkMode.forEach((boton) => {
         boton.classList.toggle('oculto')
     })
-} )
+})
 
 
 
@@ -64,3 +64,84 @@ window.onscroll = () => {
         })
     })
 }
+
+
+// Fetch data
+// todo mejorar esta parte, sintaxis y llamadas
+
+async function todos() {
+    let data = [];
+    await fetch('https://fakestoreapi.com/products')
+        .then(res => res.json())
+        .then(json => { data = json })
+
+    // console.log(data);
+
+    mostrarTodos(data);
+}
+
+todos();
+
+
+function mostrarTodos(arr) {
+    let contenedor = document.querySelector('.productos-contenedor');
+
+    // evita el error donde no hay que cargar todos. 
+    if (contenedor == null) return;
+
+
+    arr.forEach(item => {
+        const { id, title, price, description, image } = item;
+
+        let element = document.createElement('div');
+        element.classList = 'items';
+        element.id = id;
+        element.innerHTML =
+            `
+        <a href="../html/producto.html?id=${id}">
+        <div class="img img1">
+
+        <img
+            src="${image}"
+            alt="${title}"
+        />
+        </div>
+        <div class="name">${title}</div>
+        <div class="price">${price} €</div>
+        <div class="info">${description}</div>
+        </a>
+
+        `
+        contenedor.appendChild(element);
+
+    })
+}
+
+// Menú - categorías
+
+async function obtenerCategorías() {
+    let data = [];
+    await fetch('https://fakestoreapi.com/products/categories')
+        .then(res => res.json())
+        .then(json => { data = json })
+
+    mostrarCategorías(data);
+}
+
+function mostrarCategorías(arr) {
+    let categorias = document.querySelectorAll('.categorias-ul');
+    categorias.forEach(_categoria => {
+
+        arr.forEach((item, index) => {
+
+
+            let element = document.createElement('li');
+            element.innerHTML =
+                `<a href="../html/categoria.html?cat=${item}">${item}</a>`
+            _categoria.appendChild(element);
+
+        })
+    })
+}
+
+obtenerCategorías()
