@@ -118,30 +118,45 @@ function mostrarTodos(arr) {
 }
 
 // Menú - categorías
+obtenerCategorías()
 
 async function obtenerCategorías() {
     let data = [];
-    await fetch('https://fakestoreapi.com/products/categories')
-        .then(res => res.json())
-        .then(json => { data = json })
+    let categoriasLocal = recuperarCategoriasLS();
 
+    if (categoriasLocal) {
+        console.log('obteniendo categorias del local storage')
+        data = categoriasLocal;
+    }
+    else {
+        console.log('haciendo fetch de categorias');
+        await fetch('https://fakestoreapi.com/products/categories')
+            .then(res => res.json())
+            .then(json => { data = json });
+        guardarCategoriasLS(data);
+    }
     mostrarCategorías(data);
 }
 
 function mostrarCategorías(arr) {
     let categorias = document.querySelectorAll('.categorias-ul');
     categorias.forEach(_categoria => {
-
         arr.forEach((item, index) => {
-
-
             let element = document.createElement('li');
             element.innerHTML =
                 `<a href="../html/categoria.html?cat=${item}">${item}</a>`
             _categoria.appendChild(element);
-
         })
     })
 }
 
-obtenerCategorías()
+function guardarCategoriasLS(data) {
+    localStorage.setItem('categorias', data);
+}
+function recuperarCategoriasLS() {
+    try {
+        return localStorage.getItem('categorias').split(',');
+    } catch (error) {
+        return null
+    }
+}
