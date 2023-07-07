@@ -16,8 +16,6 @@ botonDesplegar.addEventListener('click', () => {
     menuDesplegar.classList.toggle('oculto')
 })
 
-
-
 //  dark mode
 iconosDarkMode.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
@@ -25,8 +23,6 @@ iconosDarkMode.addEventListener('click', () => {
         boton.classList.toggle('oculto')
     })
 })
-
-
 
 botonBuscar.addEventListener('click', () => {
 
@@ -66,56 +62,6 @@ window.onscroll = () => {
 }
 
 
-// Fetch data
-// todo mejorar esta parte, sintaxis y llamadas
-
-async function todos() {
-    let data = [];
-    await fetch('https://fakestoreapi.com/products')
-        .then(res => res.json())
-        .then(json => { data = json })
-
-    // console.log(data);
-
-    mostrarTodos(data);
-}
-
-todos();
-
-
-function mostrarTodos(arr) {
-    let contenedor = document.querySelector('.productos-contenedor');
-
-    // evita el error donde no hay que cargar todos. 
-    if (contenedor == null) return;
-
-
-    arr.forEach(item => {
-        const { id, title, price, description, image } = item;
-
-        let element = document.createElement('div');
-        element.classList = 'items';
-        element.id = id;
-        element.innerHTML =
-            `
-        <a href="../html/producto.html?id=${id}">
-        <div class="img img1">
-
-        <img
-            src="${image}"
-            alt="${title}"
-        />
-        </div>
-        <div class="name">${title}</div>
-        <div class="price">${price} €</div>
-        <div class="info">${description}</div>
-        </a>
-
-        `
-        contenedor.appendChild(element);
-
-    })
-}
 
 // Menú - categorías
 obtenerCategorías()
@@ -159,4 +105,49 @@ function recuperarCategoriasLS() {
     } catch (error) {
         return null
     }
+}
+
+// Mostrar ultimos en el aside
+let lateral = document.querySelector('.lateral');
+if (lateral) {
+    mostrarUltimos()
+}
+function mostrarUltimos() {
+    let vistos = JSON.parse(localStorage.getItem('vistos'));
+    if (!vistos) rellenarLateral()
+    else {
+        vistos.forEach(obj => {
+            const { id, title, price, image } = obj;
+
+            let element = document.createElement('div');
+            element.classList = 'item-lateral';
+            element.id = id;
+            element.innerHTML =
+                `<a href="../html/producto.html?id=${id}">
+                <div class="img-lateral">
+                <img
+                    src="${image}"
+                    alt="${title}"
+                    />
+                </div>
+                <div class="name">${title}</div>
+                <div class="price">${price} €</div>
+                </a>`
+            lateral.appendChild(element);
+        })
+    }
+}
+
+async function rellenarLateral() {
+    console.log('rellena lateral');
+    let arrayVistos = []
+
+    for (let i = 0; i < 6; i++) {
+        let id = Math.ceil(Math.random() * 20)
+        await fetch(`https://fakestoreapi.com/products/${id}`)
+            .then(res => res.json())
+            .then(json => { arrayVistos.unshift(json) });
+    }
+    localStorage.setItem('vistos', JSON.stringify(arrayVistos))
+    mostrarUltimos()
 }
