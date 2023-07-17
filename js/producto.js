@@ -42,10 +42,29 @@ async function getProducto(_id) {
               ${description}
             </p>
             <p id="rating">${rating.rate}&#9734;/${rating.count} ratings</p>
+            <div class="add-carrito">
+            <button onclick="agregarCarrito()" type="button" class="button">
+              <span class="button__text">Add to cart</span>
+              <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+            </button>
+            </div>
           </div>
+
+
         `
   contenedor.appendChild(element);
+
 }
+
+
+
+
+
+
+
+
+
+
 
 function guardarProductoLS(prod) {
   let vistos = localStorage.getItem('vistos');
@@ -56,7 +75,7 @@ function guardarProductoLS(prod) {
 
     let hash = {};
     let arrayUnico = arrayVistos.filter(objeto => hash[objeto.id] ? false : hash[objeto.id] = true);
-    if (arrayUnico.length > 6) arrayUnico.length = 6;
+    if (arrayUnico.length > 4) arrayUnico.length = 4;
 
     localStorage.setItem('vistos', JSON.stringify(arrayUnico))
 
@@ -68,4 +87,24 @@ function guardarProductoLS(prod) {
   }
 
 }
+
+function agregarCarrito() {
+
+  let carrito = localStorage.getItem('carrito');
+
+  if (!carrito) {
+    let arrayCarrito = [id]
+    localStorage.setItem('carrito', JSON.stringify(arrayCarrito) )
+    console.log('Carrito creado con el producto');
+  } else {
+    let arrayCarrito = JSON.parse(carrito)
+    arrayCarrito.push(id)
+    arrayCarrito = [...new Set(arrayCarrito)]
+    localStorage.setItem('carrito', JSON.stringify(arrayCarrito))
+    console.log('Añadido al carrito');
+  }
+
+  badgeCarrito();
+}
+
 

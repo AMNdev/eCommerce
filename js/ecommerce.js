@@ -33,16 +33,37 @@ botonBuscar.addEventListener('click', () => {
 })
 
 // funciones solo para desarrollo
-carrito.addEventListener('click', () => {
-    badge.innerHTML = Math.ceil(Math.random() * 10);
-    badge.classList.toggle('oculto');
+// carrito.addEventListener('click', () => {
+// badge.innerHTML = Math.ceil(Math.random() * 10);
+// badge.classList.toggle('oculto');
 
-})
-botonCarritoDesplegable.addEventListener('click', () => {
-    badgeDesplegable.innerHTML = Math.ceil(Math.random() * 10);
-    badgeDesplegable.classList.toggle('oculto');
+// })
+// botonCarritoDesplegable.addEventListener('click', () => {
+//     badgeDesplegable.innerHTML = Math.ceil(Math.random() * 10);
+//     badgeDesplegable.classList.toggle('oculto');
 
-})
+// })
+
+// Badge Indide del carrito
+setTimeout(badgeCarrito, 3000)    
+
+function badgeCarrito() {
+    // console.log('badge');
+    let carrito = localStorage.getItem('carrito');
+    if (!carrito) {
+        console.log('no carrito');
+
+    } else {
+        // console.log('si carrito');
+
+        let arrayCarrito = JSON.parse(carrito)
+        badge.innerHTML = arrayCarrito.length;
+        badge.classList.remove('oculto');
+
+        badgeDesplegable.innerHTML = arrayCarrito.length;
+        badgeDesplegable.classList.remove('oculto');
+    }
+}
 
 // Boton Arriba
 const buttonTop = document.querySelector('#buttonTop');
@@ -142,7 +163,7 @@ async function rellenarLateral() {
     console.log('rellena lateral');
     let arrayVistos = []
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 4; i++) {
         let id = Math.ceil(Math.random() * 20)
         await fetch(`https://fakestoreapi.com/products/${id}`)
             .then(res => res.json())

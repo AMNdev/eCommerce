@@ -2,12 +2,16 @@ let titulo = document.getElementById('titulo');
 const categoriaUrl = window.location.search;
 const urlParams = new URLSearchParams(categoriaUrl);
 
+const esPaginaCarrito = window.location.pathname.includes('carrito');
 //Verificar si existe el parámetro
-// si fallan los parámetros, volver a inicio
-if (!urlParams.has('cat')) location.replace('../index.html')
-
 const categoria = urlParams.get('cat');
-titulo.innerText = categoria;
+
+if (!esPaginaCarrito) {
+    
+    // si fallan los parámetros, volver a inicio
+    if (!urlParams.has('cat')) location.replace('../index.html')
+    titulo.innerText = categoria;
+}
 
 getCategoria()
 

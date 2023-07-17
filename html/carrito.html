@@ -48,15 +48,8 @@
 
     <div class="menu">
       <div class="categorias">
-        <ul>
-          <li><a href="../html/categoria.html?cat=men">men's clothing</a></li>
-          <li>
-            <a href="../html/categoria.html?cat=women">women's clothing</a>
-          </li>
-          <li><a href="../html/categoria.html?cat=jewellery">jewellery</a></li>
-          <li>
-            <a href="../html/categoria.html?cat=electronics">electronics</a>
-          </li>
+        <ul class="categorias-ul">
+          <!-- <li><a href="../html/categoria.html?cat=men">men's clothing</a></li> -->
         </ul>
       </div>
       <div class="buscar">
@@ -78,7 +71,9 @@
     </div>
 
     <!--           **************************************         -->
+    <!--           **************************************         -->
     <!--           ************   SECCIÓN  **************         -->
+    <!--           **************************************         -->
     <!--           **************************************         -->
 
     <div class="menuDesplegable">
@@ -87,18 +82,7 @@
       </div>
       <div class="menuDesplegado oculto">
         <div class="categoriasDesplegable">
-          <ul>
-            <li><a href="../html/categoria.html?cat=men">men's clothing</a></li>
-            <li>
-              <a href="../html/categoria.html?cat=women">women's clothing</a>
-            </li>
-            <li>
-              <a href="../html/categoria.html?cat=jewellery">jewellery</a>
-            </li>
-            <li>
-              <a href="../html/categoria.html?cat=electronics">electronics</a>
-            </li>
-          </ul>
+          <ul class="categorias-ul"></ul>
         </div>
         <div class="buscarDesplegable">
           <input
@@ -117,18 +101,20 @@
     </div>
 
     <!--           **************************************         -->
+    <!--           **************************************         -->
     <!--           ************   SECCIÓN  **************         -->
+    <!--           **************************************         -->
     <!--           **************************************         -->
 
     <div class="grid-area">
       <div class="lista">
         <div class="encabezado">
           <h2>Productos en tu cesta</h2>
-          <p><span>5</span> productos</p>
+          <p id="totalProductosDom"></p>
         </div>
 
         <div class="relacion-productos">
-          <div class="producto">
+          <!-- <div class="producto">
             <div class="imagen-producto">
               <img
                 src="https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -150,37 +136,31 @@
                 <div class="total">$545</div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
       <div class="resumen">
         <div class="resumen-productos">
           <h3 class="titulo">Resumen de Pedido</h3>
-          <div class="resumen-item">
+
+          <div class="resumen-lista">
+            <!-- <div class="resumen-item">
             <div class="resumen-name">WASHING MACHINE</div>
             <div class="resumen-cantidad">2</div>
             <div class="resumen-total">$150</div>
-          </div>
-          <div class="resumen-item">
-            <div class="resumen-name">WASHING MACHINE</div>
-            <div class="resumen-cantidad">2</div>
-            <div class="resumen-total">$150</div>
-          </div>
-          <div class="resumen-item">
-            <div class="resumen-name">WASHING MACHINE</div>
-            <div class="resumen-cantidad">2</div>
-            <div class="resumen-total">$150</div>
+          </div>-->
           </div>
 
           <div class="resumen-final">
             <h3>Total</h3>
-            <div class="total-final">$300</div>
+            <div class="total-final"></div>
           </div>
         </div>
 
         <div class="resumen-comprar">
           <button class="comprar-btn">Comprar ahora</button>
+          <button class="comprar-btn eliminar">Eliminar productos</button>
         </div>
       </div>
     </div>
@@ -239,6 +219,7 @@
 
     <script src="../js/ecommerce.js"></script>
     <script src="../js/carrito.js"></script>
+    <!-- <script src="../js/categoria.js"></script> -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
