@@ -1,7 +1,17 @@
 let resumenLista = document.querySelector('.resumen-lista');
 let carritoLS = localStorage.getItem('carrito')
+const acciones = document.querySelector('.resumen-comprar');
 const arrayCarrito = JSON.parse(carritoLS)
 let productosAlmacenados = []
+
+
+acciones.addEventListener('click', (e) => {
+  const elementoClicado = e.target.classList.toString();
+  if (!elementoClicado.includes('comprar-btn')) return;
+  if (!elementoClicado.includes('eliminar')) comprar()
+  else eliminarTodo()
+});
+
 
 const buscarProducto = async (id) => {
 
@@ -12,23 +22,34 @@ const buscarProducto = async (id) => {
 
 // Itera todos los id y devuelve su info completa.
 const obtenerProductos = async (productosArray) => {
-  const peticiones = productosArray.map((id) => {
-    // Función asíncrona que busca la info del producto.
-    return buscarProducto(id)
-      .then((a) => {
-        return a
-        // Regresa la info del producto.
-      })
-  })
-  return Promise.all(peticiones)
+  if (!productosArray) return
+  try {
+    const peticiones = productosArray.map((id) => {
+      // Función asíncrona que busca la info del producto.
+      return buscarProducto(id)
+        .then((a) => {
+          return a
+          // Regresa la info del producto.
+        })
+    })
+    return Promise.all(peticiones)
+  } catch (error) {
+    console.log(error);
+  }
+
   // Esperando que todas las peticiones se resuelvan.
 }
 
 obtenerProductos(arrayCarrito).then(res => {
-  res.forEach(prod => {
-    prod.cantidad = 1;
-  })
-  productosAlmacenados = res;
+  try {
+    res.forEach(prod => {
+      prod.cantidad = 1;
+    })
+    productosAlmacenados = res;
+
+  } catch (error) {
+
+  }
   mostrarProductosDom()
 })
 
@@ -49,9 +70,10 @@ function mostrarRelacion() {
 
   productosAlmacenados.forEach(producto => {
 
-    const { id, title, price, description, cantidad, image } = producto;
+    let { id, title, price, description, cantidad, image } = producto;
+    price = price.toFixed(2);
     let element = document.createElement('div');
-    const total = price * cantidad;
+    const total = (price * cantidad).toFixed(2);
     element.className = 'producto';
     element.id = 'producto-' + String(id);
     element.innerHTML =
@@ -82,7 +104,6 @@ function mostrarRelacion() {
 
 // como la anterior, en el resumen de productos
 function mostrarResumen() {
-  // console.log('Mostrar resumen: Array de productos Almacenados', productosAlmacenados);
 
   let listado = document.querySelector('.resumen-lista');
   let totalFinal = document.querySelector('.total-final');
@@ -96,10 +117,10 @@ function mostrarResumen() {
   productosAlmacenados.forEach(producto => {
     let { id, title, price, cantidad } = producto;
     cantidad = +cantidad;
-    price = +price;
+    price = +price.toFixed(2);
     let element = document.createElement('div');
-    const total = price * cantidad;
-    sumaTotal += total;
+    const total = (price * cantidad).toFixed(2);
+    sumaTotal += +total;
     element.className = 'resumen-item';
     element.id = 'producto-' + String(id);
     element.innerHTML =
@@ -109,13 +130,14 @@ function mostrarResumen() {
     listado.appendChild(element);
   })
 
+  sumaTotal = sumaTotal.toFixed(2);
   totalFinal.innerHTML = `${sumaTotal} €`
 }
 
 // data binding, actualiza las cantidades de cada producto
 function cantidades(id, price, value) {
   const idElemento = '#producto-' + id;
-  const nuevoTotal = value * price;
+  const nuevoTotal = (value * price).toFixed(2);
 
   let listado = document.querySelector('.relacion-productos');
   let elementoCambiar = listado.querySelector(idElemento)
@@ -128,10 +150,10 @@ function cantidades(id, price, value) {
 
     if (window.confirm('Seguro que desea eliminar este elemento?')) {
       console.log('eliminar de verdad');
-      
+
       // con esto lo quito del dom
       elementoCambiar.parentElement.removeChild(elementoCambiar)
-      
+
       // encontrarlo en el array productosAlmacenados
       let eliminar = productosAlmacenados.find((elemento, indice) => {
         return elemento.id == id
@@ -162,6 +184,42 @@ function cantidades(id, price, value) {
 
 }
 
-// todo guardar los productosAlmacenados(lista de la compra con cantidades) en LS
+function comprar() {
+  console.log('comprando');
+  swal({
+    title: "Thank you for reaching this point",
+    text: '  ',
 
-// todo  añadir articulos al resumen y adaptar funcion cantidades para que lo actualice también.
+    buttons: false,
+    timer: 1500,
+    icon: "success",
+  },
+  );
+}
+
+function eliminarTodo() {
+  swal({
+    title: "Are you sure?",
+    text: 'Are you sure you want to remove all products?',
+    icon: "warning",
+    buttons: {
+      cancel: true,
+      confirm: true,
+    },
+  })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Empty cart", {
+          buttons: false,
+          icon: "success",
+          timer: 2000,
+        }).then(() => {
+          localStorage.removeItem('carrito')
+          window.location.replace('../index.html');
+        });
+
+      } else {
+        swal("You can continue shopping");
+      }
+    })
+}

@@ -161,6 +161,7 @@
 .resumen-cantidad,
 .resumen-total {
   text-align: center;
+  overflow: visible;
 }
 
 .resumen-comprar {

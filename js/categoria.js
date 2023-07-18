@@ -28,7 +28,8 @@ async function getCategoria() {
     if (main == null) return;
 
     data.forEach(item => {
-        const { id, title, price, description, image } = item;
+        let { id, title, price, description, image } = item;
+        price = price.toFixed(2);
 
         let element = document.createElement('div');
         element.classList = 'items';

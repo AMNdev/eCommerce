@@ -138,7 +138,9 @@ function mostrarUltimos() {
     if (!vistos) rellenarLateral()
     else {
         vistos.forEach(obj => {
-            const { id, title, price, image } = obj;
+            let { id, title, price, image } = obj;
+
+            price = price.toFixed(2);
 
             let element = document.createElement('div');
             element.classList = 'item-lateral';

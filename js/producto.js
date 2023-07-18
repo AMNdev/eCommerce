@@ -19,7 +19,8 @@ async function getProducto(_id) {
 
   guardarProductoLS(data);
 
-  const { id, title, price, description, image, rating, category } = data;
+  let { id, title, price, description, image, rating, category } = data;
+  price = price.toFixed(2);
 
   let element = document.createElement('div');
   element.classList = 'producto-card';
@@ -56,16 +57,6 @@ async function getProducto(_id) {
 
 }
 
-
-
-
-
-
-
-
-
-
-
 function guardarProductoLS(prod) {
   let vistos = localStorage.getItem('vistos');
 
@@ -75,36 +66,41 @@ function guardarProductoLS(prod) {
 
     let hash = {};
     let arrayUnico = arrayVistos.filter(objeto => hash[objeto.id] ? false : hash[objeto.id] = true);
+
     if (arrayUnico.length > 4) arrayUnico.length = 4;
-
     localStorage.setItem('vistos', JSON.stringify(arrayUnico))
-
   } else {
     console.log('primera vez LS');
     let arrayVistos = []
     arrayVistos.push(prod)
     localStorage.setItem('vistos', JSON.stringify(arrayVistos))
   }
-
 }
 
 function agregarCarrito() {
-
   let carrito = localStorage.getItem('carrito');
+  let mensajeCarrito = '';
 
   if (!carrito) {
     let arrayCarrito = [id]
-    localStorage.setItem('carrito', JSON.stringify(arrayCarrito) )
-    console.log('Carrito creado con el producto');
+    localStorage.setItem('carrito', JSON.stringify(arrayCarrito))
+    mensajeCarrito = 'Cart created';
+
   } else {
     let arrayCarrito = JSON.parse(carrito)
     arrayCarrito.push(id)
     arrayCarrito = [...new Set(arrayCarrito)]
     localStorage.setItem('carrito', JSON.stringify(arrayCarrito))
-    console.log('Añadido al carrito');
+    mensajeCarrito = 'Successfully added'
   }
+
+  swal(mensajeCarrito,
+    {
+      buttons: false,
+      timer: 1500,
+      icon: "success",
+    },
+  );
 
   badgeCarrito();
 }
-
-
